@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    //*.box{
+    /*.box{
       position: absolute;
       width: 100px;
       height: 100px;
       top: 50%;
       left: 50%;
       background-color: skyblue;
-    }*//
+    }*/
   </style>
 </head>
 <body>
@@ -35,6 +35,17 @@
     })
 
 
+    let rotate = 0;
+
+        function boxRotate() {
+            let boxes = document.querySelectorAll('div');
+            rotate += 2;
+            boxes.forEach(function(box) {
+                box.style.transform = `rotate(${rotate}deg)`;
+            })
+            requestAnimationFrame(boxRotate);
+        }
+        boxRotate();
 
 
     //const box = document.querySelector('.box');
